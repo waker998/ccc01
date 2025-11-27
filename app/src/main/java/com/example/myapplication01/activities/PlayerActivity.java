@@ -8,6 +8,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication01.R;
+import com.example.myapplication01.logic.Leaderboard;
 import com.example.myapplication01.models.Player;
 
 public class PlayerActivity extends AppCompatActivity {
@@ -43,13 +44,15 @@ public class PlayerActivity extends AppCompatActivity {
         int selectedColorId = rgAvatar.getCheckedRadioButtonId();
         int avatarColor = getAvatarColor(selectedColorId);
 
-        // 创建玩家对象（稍后添加到排行榜）
+        // 创建玩家对象并添加到排行榜
         Player newPlayer = new Player(playerName, avatarColor, finalScore);
+        Leaderboard.getInstance().updateLeaderboard(newPlayer);
 
         // 跳转回主界面
         Intent intent = new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(intent);
+        finish(); // 结束当前Activity
     }
 
     private int getAvatarColor(int radioButtonId) {
