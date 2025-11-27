@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.os.Looper;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.myapplication01.activities.PlayerActivity;
@@ -18,7 +19,7 @@ public class GameLogic {
     private int currentScore = 0;
     private int timeRemaining = 30;
 
-    private Handler moleHandler = new Handler();
+    private Handler moleHandler = new Handler(Looper.getMainLooper()); // 修复：使用主线程Looper
     private Runnable moleRunnable;
     private CountDownTimer gameTimer;
     private Random random = new Random();
