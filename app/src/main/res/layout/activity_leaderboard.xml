@@ -3,20 +3,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@android:color/white"
-    android:gravity="center">
+    android:background="@android:color/white">
 
+    <!-- 标题 -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:src="@drawable/img_wakamole_text"
+        android:scaleType="centerInside" />
+
+    <!-- 排行榜标题 -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Game Activity - Coming Soon"
-        android:textSize="24sp"
-        android:layout_marginBottom="20dp" />
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="@color/purple_500"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:text="Leaderboard" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back to Main"
-        android:onClick="onBack" />
+    <!-- 排行榜列表 -->
+    <LinearLayout
+        android:id="@+id/leaderboard_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:orientation="vertical"
+        android:layout_margin="20dp">  <!-- 修复：改为 android:layout_margin -->
+
+        <!-- 排行榜条目将通过代码动态添加 -->
+
+    </LinearLayout>
 
 </LinearLayout>

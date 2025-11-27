@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="10dp">  <!-- 确保这里也是 layout_marginTop -->
+
+    <!-- 头像颜色指示 -->
+    <View
+        android:id="@+id/iv_leaderboard_avatar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="10dp"
+        android:background="@android:color/darker_gray" />
+
+    <!-- 玩家姓名 -->
+    <TextView
+        android:id="@+id/tv_leaderboard_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:text="Player Name"
+        android:padding="0dp" />
+
+    <!-- 分数 -->
+    <TextView
+        android:id="@+id/tv_leaderboard_score"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:text="0"
+        android:padding="10dp"
+        android:gravity="end" />
+
+</LinearLayout>
