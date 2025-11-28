@@ -1,13 +1,12 @@
 package com.example.myapplication01.activities;
 
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import com.example.myapplication01.R;
 import com.example.myapplication01.logic.Leaderboard;
 import com.example.myapplication01.models.Player;
@@ -36,10 +35,10 @@ public class LeaderboardActivity extends AppCompatActivity {
             // 加载排行榜条目布局
             View itemView = inflater.inflate(R.layout.item_leaderboard, container, false);
 
-            // 设置头像颜色
-            View avatarView = itemView.findViewById(R.id.iv_leaderboard_avatar);
-            int color = ContextCompat.getColor(this, player.getPlayerAvatar());
-            avatarView.setBackgroundColor(color);
+            // 设置地鼠头像图片
+            ImageView avatarView = itemView.findViewById(R.id.iv_leaderboard_avatar);
+            avatarView.setImageResource(player.getPlayerAvatar());  // 设置图片资源
+            avatarView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);  // 设置图片缩放方式
 
             // 设置玩家姓名
             TextView nameView = itemView.findViewById(R.id.tv_leaderboard_name);

@@ -42,10 +42,10 @@ public class PlayerActivity extends AppCompatActivity {
         }
 
         int selectedColorId = rgAvatar.getCheckedRadioButtonId();
-        int avatarColor = getAvatarColor(selectedColorId);
+        int avatarResId = getAvatarResourceId(selectedColorId);  // 改为获取资源ID
 
         // 创建玩家对象并添加到排行榜
-        Player newPlayer = new Player(playerName, avatarColor, finalScore);
+        Player newPlayer = new Player(playerName, avatarResId, finalScore);
         Leaderboard.getInstance().updateLeaderboard(newPlayer);
 
         // 跳转回主界面
@@ -55,21 +55,21 @@ public class PlayerActivity extends AppCompatActivity {
         finish(); // 结束当前Activity
     }
 
-    private int getAvatarColor(int radioButtonId) {
-        // 根据选择的单选按钮返回对应的颜色资源
+    private int getAvatarResourceId(int radioButtonId) {
+        // 根据选择的单选按钮返回对应的图片资源ID
         if (radioButtonId == R.id.rb_grey) {
-            return android.R.color.darker_gray;
+            return R.drawable.img_grey_mole;
         } else if (radioButtonId == R.id.rb_blue) {
-            return android.R.color.holo_blue_light;
+            return R.drawable.img_blue_mole;
         } else if (radioButtonId == R.id.rb_orange) {
-            return android.R.color.holo_orange_light;
+            return R.drawable.img_orange_mole;
         } else if (radioButtonId == R.id.rb_green) {
-            return android.R.color.holo_green_light;
+            return R.drawable.img_green_mole;
         } else if (radioButtonId == R.id.rb_purple) {
-            return R.color.purple_500;
+            return R.drawable.img_purple_mole;
         } else if (radioButtonId == R.id.rb_pink) {
-            return android.R.color.holo_red_light;
+            return R.drawable.img_pink_mole;
         }
-        return android.R.color.darker_gray; // 默认灰色
+        return R.drawable.img_grey_mole; // 默认灰色地鼠
     }
 }

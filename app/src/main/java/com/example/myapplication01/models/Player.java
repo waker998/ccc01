@@ -2,12 +2,12 @@ package com.example.myapplication01.models;
 
 public class Player {
     private final String playerName;
-    private final int playerAvatar;
+    private final int playerAvatarResId;  // 改为资源ID
     private final int playerScore;
 
-    public Player(String name, int avatar, int score) {
+    public Player(String name, int avatarResId, int score) {
         this.playerName = name;
-        this.playerAvatar = avatar;
+        this.playerAvatarResId = avatarResId;
         this.playerScore = score;
     }
 
@@ -15,8 +15,8 @@ public class Player {
         return playerName;
     }
 
-    public int getPlayerAvatar() {
-        return playerAvatar;
+    public int getPlayerAvatar() {  // 返回资源ID
+        return playerAvatarResId;
     }
 
     public int getPlayerScore() {
